@@ -18,16 +18,22 @@ O script extraction.py é responsável por extrair dados da API Ergast para os a
 O script transformation.py é responsável por transformar os dados extraídos e combiná-los em um único DataFrame. Ele realiza as seguintes etapas:
 
 1- Carregar Dados Extraídos: Os dados são carregados dos arquivos CSV gerados na etapa de extração.
+
 2- Combinar Dados: Os DataFrames são combinados usando junções (merge) para formar um DataFrame único que contém todas as informações relevantes.
+
 3- Salvar Dados Transformados: O DataFrame combinado é salvo em um arquivo CSV (combined_f1_data.csv).
 
 # 3. Carga (load.py)
 O script load.py é responsável por carregar os dados transformados no banco de dados SQLite. Ele realiza as seguintes etapas:
 
 1- Carregar Dados Transformados: Os dados são carregados do arquivo CSV gerado na etapa de transformação.
+
 2- Conectar ao Banco de Dados: Conecta ou cria um banco de dados SQLite (f1_data.db).
+
 3- Criar Tabela: Cria uma tabela no banco de dados para armazenar os dados transformados.
+
 4- Inserir Dados na Tabela: Os dados são inseridos na tabela criada.
+
 5- Confirmar e Fechar Conexão: As alterações são confirmadas e a conexão com o banco de dados é fechada.
 
 # Execução do Processo
@@ -49,15 +55,19 @@ Arquitetura ETL
 
 Extração:
 - Fonte de dados: API Ergast
+  
 - Scripts: extraction.py
+  
 - Arquivos gerados: race_results.csv, driver_standings.csv, constructor_standings.csv
 
 Transformação:
 - Scripts: transformation.py
+  
 - Arquivo gerado: combined_f1_data.csv
 
 Carga:
 - Scripts: load.py
+  
 - Banco de dados: SQLite (f1_data.db)
 
 # Código de Desenho da Arquitetura
