@@ -1,3 +1,5 @@
+![alt text](https://www.logotipo.pt/wp-content/uploads/2018/03/artigo-F1-novo-2.jpg)
+
 # ETL de Dados de Fórmula 1
 Este repositório contém um processo ETL (Extração, Transformação e Carga) para obter dados de resultados de corridas, classificações de pilotos e classificações de construtores da Fórmula 1 a partir da API Ergast, transformar esses dados e carregá-los em um banco de dados SQLite.
 
