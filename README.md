@@ -1,4 +1,4 @@
-"# ETL de Dados de Fórmula 1
+# ETL de Dados de Fórmula 1
 Este repositório contém um processo ETL (Extração, Transformação e Carga) para obter dados de resultados de corridas, classificações de pilotos e classificações de construtores da Fórmula 1 a partir da API Ergast, transformar esses dados e carregá-los em um banco de dados SQLite.
 
 # Arquitetura do Processo
