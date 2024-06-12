@@ -29,8 +29,39 @@ O script load.py é responsável por carregar os dados transformados no banco de
 
 # Execução do Processo
 1- Execute extraction.py para extrair os dados e salvá-los em arquivos CSV:
-'''python
 python extraction.py
+
+2- Execute transformation.py para transformar os dados e salvá-los em um arquivo CSV combinado:
+python transformation.py
+
+3- Execute load.py para carregar os dados transformados no banco de dados SQLite:
+python load.py
+
+# Requisitos
+Requisitos
+Python 3.x
+Bibliotecas: requests, pandas, sqlite3
+
+# Desenho da Arquitetura
+Arquitetura ETL
+
+1- Extração:
+- Fonte de dados: API Ergast
+- Scripts: extraction.py
+- Arquivos gerados: race_results.csv, driver_standings.csv, constructor_standings.csv
+
+2- Transformação:
+- Scripts: transformation.py
+- Arquivo gerado: combined_f1_data.csv
+
+3- Carga:
+- Scripts: load.py
+- Banco de dados: SQLite (f1_data.db)
+
+
+
+
+
 
 
 
