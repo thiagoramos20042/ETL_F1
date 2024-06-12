@@ -2,7 +2,7 @@
 Este repositório contém um processo ETL (Extração, Transformação e Carga) para obter dados de resultados de corridas, classificações de pilotos e classificações de construtores da Fórmula 1 a partir da API Ergast, transformar esses dados e carregá-los em um banco de dados SQLite.
 
 # Arquitetura do Processo
-1. Extração (extraction.py)
+# 1. Extração (extraction.py)
    
 O script extraction.py é responsável por extrair dados da API Ergast para os anos de 1950 a 2023. Ele realiza as seguintes etapas:
 
