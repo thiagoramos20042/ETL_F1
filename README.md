@@ -72,7 +72,7 @@ Carga:
   
 - Banco de dados: SQLite (f1_data.db)
 
-# Código de Desenho da Arquitetura
+# Desenho da Arquitetura
 ![alt text](https://github.com/thiagoramos20042/ETL_F1/blob/main/simple_etl_architecture_corrected.jpeg)
 
 
