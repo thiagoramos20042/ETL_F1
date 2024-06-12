@@ -5,8 +5,11 @@ Este repositório contém um processo ETL (Extração, Transformação e Carga) 
 1. Extração (extraction.py)
 O script extraction.py é responsável por extrair dados da API Ergast para os anos de 1950 a 2023. Ele realiza as seguintes etapas:
 1- Obter Resultados de Corridas: A função get_race_results(year) faz uma requisição à API Ergast para obter os resultados das corridas de um ano específico.
+   
 2- Obter Classificações de Pilotos: A função get_driver_standings(year) faz uma requisição à API Ergast para obter a classificação dos pilotos de um ano específico.
+
 3- Obter Classificações de Construtores: A função get_constructor_standings(year) faz uma requisição à API Ergast para obter a classificação dos construtores de um ano específico.
+
 4- Salvar Dados Extraídos: Os dados extraídos são armazenados em arquivos CSV (race_results.csv, driver_standings.csv e constructor_standings.csv).
 
 # 2. Transformação (transformation.py)
