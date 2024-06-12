@@ -32,7 +32,7 @@ O script load.py é responsável por carregar os dados transformados no banco de
 '''python
 python extraction.py
 
-Agora, execute o próximo script para processar os dados:
+
 
 
 
