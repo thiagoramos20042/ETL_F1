@@ -29,6 +29,12 @@ O script load.py é responsável por carregar os dados transformados no banco de
 
 # Execução do Processo
 1- Execute extraction.py para extrair os dados e salvá-los em arquivos CSV:
-```python
+'''python
 python extraction.py
+
+Agora, execute o próximo script para processar os dados:
+
+
+
+
 
