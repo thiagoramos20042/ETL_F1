@@ -2,9 +2,9 @@
 
 Extração, integração e armazenamento de resultados de corridas e classificações de Fórmula 1.
 
-**Engenharia de dados** · Pipeline ETL
+**Dados e integrações de apoio** · Pipeline ETL
 
-[← Portfólio de Thiago Oliveira](https://github.com/thiagoramos20042/thiagoramos20042) · [Catálogo de projetos](https://github.com/thiagoramos20042/thiagoramos20042/blob/main/PROJETOS.md)
+[← Data Science, IA e Automações · Thiago Oliveira](https://github.com/thiagoramos20042/thiagoramos20042) · [Catálogo de projetos](https://github.com/thiagoramos20042/thiagoramos20042/blob/main/PROJETOS.md)
 
 ## Objetivo
 
