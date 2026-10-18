@@ -1,84 +1,55 @@
-![alt text](https://www.logotipo.pt/wp-content/uploads/2018/03/artigo-F1-novo-2.jpg)
+# Fórmula 1 | Pipeline de dados históricos
 
-# ETL de Dados de Fórmula 1
-Este repositório contém um processo ETL (Extração, Transformação e Carga) para obter dados de resultados de corridas, classificações de pilotos e classificações de construtores da Fórmula 1 a partir da API Ergast, transformar esses dados e carregá-los em um banco de dados SQLite.
+Extração, integração e armazenamento de resultados de corridas e classificações de Fórmula 1.
 
-# Arquitetura do Processo
-# 1. Extração (extraction.py)
-   
-O script extraction.py é responsável por extrair dados da API Ergast para os anos de 1950 a 2023. Ele realiza as seguintes etapas:
+**Engenharia de dados** · Pipeline ETL
 
-1- Obter Resultados de Corridas: A função get_race_results(year) faz uma requisição à API Ergast para obter os resultados das corridas de um ano específico.
-   
-2- Obter Classificações de Pilotos: A função get_driver_standings(year) faz uma requisição à API Ergast para obter a classificação dos pilotos de um ano específico.
+[← Portfólio de Thiago Oliveira](https://github.com/thiagoramos20042/thiagoramos20042) · [Catálogo de projetos](https://github.com/thiagoramos20042/thiagoramos20042/blob/main/PROJETOS.md)
 
-3- Obter Classificações de Construtores: A função get_constructor_standings(year) faz uma requisição à API Ergast para obter a classificação dos construtores de um ano específico.
+## Objetivo
 
-4- Salvar Dados Extraídos: Os dados extraídos são armazenados em arquivos CSV (race_results.csv, driver_standings.csv e constructor_standings.csv).
+Organizar tabelas de corridas, pilotos e construtores em uma base integrada para análise histórica.
 
-# 2. Transformação (transformation.py)
-O script transformation.py é responsável por transformar os dados extraídos e combiná-los em um único DataFrame. Ele realiza as seguintes etapas:
+## O que você encontra
 
-1- Carregar Dados Extraídos: Os dados são carregados dos arquivos CSV gerados na etapa de extração.
+- Extração de resultados e classificações de pilotos/construtores.
+- Junções entre as tabelas em um CSV consolidado.
+- Carga do conjunto integrado em f1_data.db.
 
-2- Combinar Dados: Os DataFrames são combinados usando junções (merge) para formar um DataFrame único que contém todas as informações relevantes.
+## Tecnologias
 
-3- Salvar Dados Transformados: O DataFrame combinado é salvo em um arquivo CSV (combined_f1_data.csv).
+Python · requests · pandas · SQLite · CSV
 
-# 3. Carga (load.py)
-O script load.py é responsável por carregar os dados transformados no banco de dados SQLite. Ele realiza as seguintes etapas:
+## Arquivos principais
 
-1- Carregar Dados Transformados: Os dados são carregados do arquivo CSV gerado na etapa de transformação.
+| Arquivo | Conteúdo |
+| --- | --- |
+| [extract.py](extract.py) | Extração dos dados por API. |
+| [transforme.py](transforme.py) | Integração dos arquivos CSV. |
+| [load.py](load.py) | Carga no SQLite. |
+| [combined_f1_data.csv](combined_f1_data.csv) | Snapshot do conjunto consolidado. |
+| [f1_data.db](f1_data.db) | Snapshot do banco gerado. |
 
-2- Conectar ao Banco de Dados: Conecta ou cria um banco de dados SQLite (f1_data.db).
+## Como explorar
 
-3- Criar Tabela: Cria uma tabela no banco de dados para armazenar os dados transformados.
+Os CSVs e o banco presentes no repositório permitem explorar o resultado já gerado. Para refazer transformação e carga a partir desses CSVs:
 
-4- Inserir Dados na Tabela: Os dados são inseridos na tabela criada.
-
-5- Confirmar e Fechar Conexão: As alterações são confirmadas e a conexão com o banco de dados é fechada.
-
-# Execução do Processo
-1- Execute extraction.py para extrair os dados e salvá-los em arquivos CSV:
-python extraction.py
-
-2- Execute transformation.py para transformar os dados e salvá-los em um arquivo CSV combinado:
-python transformation.py
-
-3- Execute load.py para carregar os dados transformados no banco de dados SQLite:
+```bash
+python -m pip install pandas requests
+python transforme.py
 python load.py
+```
 
-# Requisitos
-Python 3.x
-Bibliotecas: requests, pandas, sqlite3
+A etapa de extração está em extract.py e usa o endpoint configurado no próprio script.
 
-# Desenho da Arquitetura
-Arquitetura ETL
+## Visualização
 
-Extração:
-- Fonte de dados: API Ergast
-  
-- Scripts: extraction.py
-  
-- Arquivos gerados: race_results.csv, driver_standings.csv, constructor_standings.csv
+![Arquitetura do pipeline de Fórmula 1](simple_etl_architecture_corrected.jpeg)
 
-Transformação:
-- Scripts: transformation.py
-  
-- Arquivo gerado: combined_f1_data.csv
+## Contexto do projeto
 
-Carga:
-- Scripts: load.py
-  
-- Banco de dados: SQLite (f1_data.db)
+A carga escreve em f1_data.db. Para preservar o snapshot existente, trabalhe em uma cópia do repositório ao reproduzir o pipeline.
 
-# Desenho da Arquitetura
-![alt text](https://github.com/thiagoramos20042/ETL_F1/blob/main/simple_etl_architecture_corrected.jpeg)
+---
 
-
-
-
-
-
-   
-
+Integra o [portfólio de Thiago Oliveira](https://github.com/thiagoramos20042).
